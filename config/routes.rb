@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   resources :articles
+  
+  # Makes comments a nested resource within articles.
+  resources :articles do
+    resources :comments
+  end
 
   get 'welcome/index'
 
